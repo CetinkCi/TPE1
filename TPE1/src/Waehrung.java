@@ -4,7 +4,7 @@ public class Waehrung {
     private String name;
     private String kuerzel;
     private long kurs;
-    public long neuBetrag;
+
  
     
     public Waehrung(String name, String kuerzel, long kurs){
@@ -26,10 +26,7 @@ public class Waehrung {
     } 
     
     public long umrechnen(long betrag, Waehrung zielWaehrung){
-        long dollar = (betrag * getKurs());
-        System.out.println(dollar);
-        
-        
+        long dollar = (betrag * getKurs());   
         return (dollar / zielWaehrung.kurs);
     } 
     
