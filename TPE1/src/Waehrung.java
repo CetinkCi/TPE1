@@ -5,8 +5,6 @@ public class Waehrung {
     private String kuerzel;
     private long kurs;
     public long neuBetrag;
-    public String info;
-    public String kurs1;
  
     
     public Waehrung(String name, String kuerzel, long kurs){
@@ -27,18 +25,22 @@ public class Waehrung {
         return kurs;
     } 
     
-    public long umrechnen(long betrag, long zielWaehrung){
+    public long umrechnen(long betrag, Waehrung zielWaehrung){
+        long dollar = (betrag * getKurs());
+        System.out.println(dollar);
         
         
-        return neuBetrag;
+        return (dollar / zielWaehrung.kurs);
     } 
     
     public String toString(Waehrung name){
         
-        kurs1=String.format("%.4f",getKurs()/10000.0);
+        String kurs1=String.format("%.4f",getKurs()/10000.0);
         
-        info=getName()+" "+"["+ getKuerzel() + "] 1$ = " + kurs1 + getKuerzel();
+        String info=getName()+" "+"["+ getKuerzel() + "] 1$ = " + kurs1 + getKuerzel();
         
         return info;
     }
+    
+    
 }
