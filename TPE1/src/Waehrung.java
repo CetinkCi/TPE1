@@ -30,6 +30,8 @@ public class Waehrung {
         return (dollar / zielWaehrung.kurs);
     } 
     
+    
+    
     public String toString(Waehrung name){
         
         String kurs1=String.format("%.4f",getKurs()/10000.0);
